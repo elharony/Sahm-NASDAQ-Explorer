@@ -11,8 +11,10 @@
   
   **A modern, responsive stock market explorer for NASDAQ listings with real-time search, infinite scroll, and professional UI/UX**
   
-  Built with ❤️ by [Yahya Elharony](https://www.linkedin.com/in/yahya-elharony/)
 </div>
+
+## Demo
+![Image](https://github.com/user-attachments/assets/312d4c7f-9e9c-4a87-bdd8-bb38640570a9)
 
 ---
 
@@ -128,99 +130,3 @@ sahm-nasdaq-explorer/
 ├── tsconfig.json          # TypeScript configuration
 └── package.json           # Dependencies and scripts
 ```
-
-
----
-
-## 🔧 Configuration
-
-### Environment Variables
-```bash
-# Required
-REACT_APP_POLYGON_API_KEY=your_api_key
-
-# Optional
-REACT_APP_ENV=development|production
-REACT_APP_API_TIMEOUT=10000
-```
-
-### API Configuration
-```typescript
-export const API_CONFIG = {
-  BASE_URL: 'https://api.polygon.io',
-  ENDPOINTS: {
-    TICKERS: '/v3/reference/tickers',
-  },
-  TIMEOUT: 10000,
-  RETRY_ATTEMPTS: 3,
-  RETRY_DELAY: 1000,
-} as const;
-```
-
-### Cache Configuration
-```typescript
-export const CACHE_CONFIG = {
-  DEFAULT_TTL: 5 * 60 * 1000, // 5 minutes
-  SEARCH_TTL: 2 * 60 * 1000,  // 2 minutes for search
-  MAX_CACHE_SIZE: 100,
-} as const;
-```
-
----
-
-
-
----
-
-
-
----
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-#### Build Fails
-```bash
-# Clear cache and reinstall
-rm -rf node_modules package-lock.json
-npm install
-npm run build
-```
-
-#### API Errors
-- Verify `REACT_APP_POLYGON_API_KEY` is set correctly
-- Check API key permissions and rate limits
-- Ensure network connectivity
-
-#### Routing Issues (Netlify)
-- Verify `public/_redirects` file exists
-- Check `netlify.toml` configuration
-- Ensure all routes redirect to `index.html`
-
-### Debug Mode
-```bash
-# Enable debug logging
-REACT_APP_DEBUG=true npm start
-```
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-
-
----
-
-
-
----
-
-<div align="center">
-  <p>Made with ❤️ by <a href="https://www.linkedin.com/in/yahya-elharony/">Yahya Elharony</a></p>
-  <p>⭐ Star this repository if you found it helpful!</p>
-</div> 
