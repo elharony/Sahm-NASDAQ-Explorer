@@ -27,22 +27,22 @@
 - **🛡️ Error Handling** — Error boundaries and toast notifications
 - **📈 Rate Limit Management** — Handling of API rate limits
 
-### 🛠️ Technical Stack
-- **TypeScript** — Type safety throughout the application
-- **React 18** — Modern React patterns with hooks
-- **Performance** — Code splitting and efficient rendering
-- **Testing** — Test suite with React Testing Library
+### 🛠️ Tech Stack
+- **TypeScript** — Full type safety across the application
+- **React 18** — Latest React patterns and hooks
+- **Performance** — Optimized code splitting and rendering
+- **Testing** — Comprehensive test suite with React Testing Library
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Getting Started
 
 ### Prerequisites
 - **Node.js** 16+ ([Download](https://nodejs.org/))
 - **npm** or **yarn** package manager
 - **Polygon.io API key** ([Get Free Key](https://polygon.io/))
 
-### Installation
+### Setup
 
 1. **Clone the repository**
    ```bash
@@ -57,23 +57,35 @@
    yarn install
    ```
 
-3. **Set up environment variables**
+3. **Configure environment**
    ```bash
-   cp env.example .env.local
+   cp env.example .env
    ```
    
-   Edit `.env.local` and add your Polygon.io API key:
+   Edit `.env` and add your Polygon.io API key:
    ```bash
    REACT_APP_POLYGON_API_KEY=your_polygon_api_key_here
    REACT_APP_ENV=development
    ```
 
-4. **Start the development server**
+4. **Launch development server**
    ```bash
    npm start
    ```
    
-   The app runs at [http://localhost:3000](http://localhost:3000)
+   Access the app at [http://localhost:3000](http://localhost:3000)
+
+5. **Run tests**
+   ```bash
+   # Run all tests
+   npm test
+   
+   # Run tests with coverage
+   npm test -- --coverage --watchAll=false
+   
+   # Run tests in watch mode
+   npm test -- --watch
+   ```
 
 ---
 
@@ -116,74 +128,6 @@ sahm-nasdaq-explorer/
 ├── tsconfig.json          # TypeScript configuration
 └── package.json           # Dependencies and scripts
 ```
-
----
-
-
-
----
-
-## 🧪 Testing
-
-```bash
-# Run all tests
-npm test
-
-# Run tests with coverage
-npm test -- --coverage --watchAll=false
-
-# Run tests in watch mode
-npm test -- --watch
-```
-
----
-
-## 🚀 Deployment
-
-### Netlify (Recommended)
-
-1. **Connect Repository**
-   - Link your GitHub repository to Netlify
-   - Netlify auto-detects React configuration
-
-2. **Set Environment Variables**
-   ```
-   REACT_APP_POLYGON_API_KEY=your_actual_api_key
-   REACT_APP_ENV=production
-   ```
-
-3. **Deploy**
-   ```bash
-   # Build locally
-   npm run build
-   
-   # Deploy to Netlify
-   netlify deploy --prod
-   ```
-
-### Other Platforms
-- **Vercel**: `vercel --prod`
-- **GitHub Pages**: `npm run deploy`
-- **AWS S3 + CloudFront**: Manual upload to S3 bucket
-
----
-
-## 🛠️ Development
-
-### Available Scripts
-```bash
-npm start          # Start development server
-npm run build      # Build for production
-npm test           # Run test suite
-npm run lint       # Run ESLint
-npm run lint:fix   # Fix ESLint issues
-npm run format     # Format code with Prettier
-```
-
-
-
----
-
 
 
 ---
