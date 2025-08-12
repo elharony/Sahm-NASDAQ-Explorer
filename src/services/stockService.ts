@@ -21,7 +21,7 @@ class StockService {
 
   private async makeRequest<T>(endpoint: string, config: any = {}): Promise<T> {
     if (!this.apiKey) {
-      throw new Error('API key required. Please set REACT_APP_POLYGON_API_KEY in your environment variables.');
+      throw new Error('API key required. Please set your Polygon.io API key in environment variables.');
     }
 
     const url = `${API_CONFIG.BASE_URL}${endpoint}`;
@@ -60,7 +60,7 @@ class StockService {
         throw new Error('Rate limit exceeded. Please try again in a few seconds.');
       }
       if (error.response?.status === 401) {
-        throw new Error('API key invalid or missing. Please check your REACT_APP_POLYGON_API_KEY.');
+        throw new Error('API key invalid or missing. Please check your Polygon.io API key configuration.');
       }
       throw error;
     }
