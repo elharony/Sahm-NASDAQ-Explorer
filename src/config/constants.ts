@@ -28,7 +28,9 @@ export const APP_CONFIG = {
   NAME: 'Sahm',
   TAGLINE: 'Your Gateway to NASDAQ',
   DEVELOPER: 'Yahya Elharony',
+  WEBSITE: 'https://elharony.com',
   LINKEDIN: 'https://www.linkedin.com/in/yahya-elharony/',
+  REPOSITORY: 'https://github.com/elharony/Sahm-NASDAQ-Explorer',
   VERSION: '1.0.0',
 } as const;
 

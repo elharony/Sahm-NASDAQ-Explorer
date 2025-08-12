@@ -211,7 +211,7 @@ export const SplashScreen: React.FC = () => {
         <p className="text-gray-700 dark:text-gray-300 text-sm font-medium">
           Built with ❤️ by{' '}
           <a 
-            href={APP_CONFIG.LINKEDIN} 
+            href={APP_CONFIG.WEBSITE} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline transition-colors"
@@ -219,6 +219,25 @@ export const SplashScreen: React.FC = () => {
             {APP_CONFIG.DEVELOPER}
           </a>
         </p>
+        <div className="flex justify-center items-center space-x-4 mt-2">
+          <a 
+            href={APP_CONFIG.LINKEDIN} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-xs text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+          >
+            LinkedIn
+          </a>
+          <span className="text-gray-400">•</span>
+          <a 
+            href={APP_CONFIG.REPOSITORY} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-xs text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+          >
+            GitHub
+          </a>
+        </div>
         <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
           Version {APP_CONFIG.VERSION}
         </p>
