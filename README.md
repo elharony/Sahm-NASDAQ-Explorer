@@ -20,20 +20,18 @@
 
 ### 🎯 Core Functionality
 - **📱 Splash Screen** — NASDAQ-branded welcome with 10-second demo timer
-- **🔍 Real-time Search** — Backend search with intelligent debouncing (300ms)
-- **📊 Infinite Scroll** — Seamless pagination with loading states
-- **⚡ Smart Caching** — Client-side caching to prevent redundant API calls
+- **🔍 Real-time Search** — Backend search with debouncing (300ms)
+- **📊 Infinite Scroll** — Pagination with loading states
+- **⚡ Basic Caching** — Client-side caching to reduce API calls
 - **🎨 Responsive Design** — Mobile-first approach with Tailwind CSS
-- **🛡️ Error Handling** — Comprehensive error boundaries and toast notifications
-- **📈 Rate Limit Management** — Graceful handling of API rate limits
+- **🛡️ Error Handling** — Error boundaries and toast notifications
+- **📈 Rate Limit Management** — Handling of API rate limits
 
-### 🛠️ Technical Excellence
-- **TypeScript** — Full type safety throughout the application
-- **React 18** — Modern React patterns with hooks and functional components
-- **Performance Optimized** — Code splitting, lazy loading, and efficient rendering
-- **Testing** — Comprehensive test suite with React Testing Library
-- **PWA Ready** — Progressive Web App capabilities with service workers
-- **SEO Optimized** — Meta tags, structured data, and semantic HTML
+### 🛠️ Technical Stack
+- **TypeScript** — Type safety throughout the application
+- **React 18** — Modern React patterns with hooks
+- **Performance** — Code splitting and efficient rendering
+- **Testing** — Test suite with React Testing Library
 
 ---
 
@@ -121,63 +119,12 @@ sahm-nasdaq-explorer/
 
 ---
 
-## 🎯 Key Features Deep Dive
 
-### 🔍 Real-time Search
-```typescript
-// Intelligent search with debouncing
-const debouncedSearch = useDebounce(searchQuery, 300);
-
-// Smart result ranking
-const sortedResults = results.sort((a, b) => {
-  // Exact ticker match > ticker starts with > exact name > name starts with
-  const rank = (ticker: string, name: string) => {
-    if (ticker === query) return 0;
-    if (ticker.startsWith(query)) return 1;
-    if (name === query) return 2;
-    if (name.startsWith(query)) return 3;
-    return 4;
-  };
-});
-```
-
-### ⚡ Smart Caching System
-```typescript
-// Client-side caching with TTL
-class CacheService {
-  private cache = new Map<string, CacheEntry<any>>();
-  
-  set<T>(key: string, data: T, ttl: number = 5 * 60 * 1000): void {
-    this.cache.set(key, {
-      data,
-      timestamp: Date.now(),
-      ttl,
-    });
-  }
-  
-  get<T>(key: string): T | null {
-    const entry = this.cache.get(key);
-    if (!entry || this.isExpired(entry)) return null;
-    return entry.data;
-  }
-}
-```
-
-### 📱 Responsive Design
-```typescript
-// Mobile-first responsive grid
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-  {stocks.map((stock) => (
-    <StockCard key={stock.ticker} stock={stock} />
-  ))}
-</div>
-```
 
 ---
 
 ## 🧪 Testing
 
-### Run Tests
 ```bash
 # Run all tests
 npm test
@@ -187,25 +134,6 @@ npm test -- --coverage --watchAll=false
 
 # Run tests in watch mode
 npm test -- --watch
-```
-
-### Test Coverage
-- **Components**: 100% coverage for core UI components
-- **Hooks**: Comprehensive testing of custom hooks
-- **Integration**: End-to-end user flow testing
-- **Error Handling**: Rate limit and network error scenarios
-
-### Example Test
-```typescript
-describe('StockCard', () => {
-  it('renders stock information correctly', () => {
-    render(<StockCard stock={mockStock} />);
-    
-    expect(screen.getByText('AAPL')).toBeInTheDocument();
-    expect(screen.getByText('Apple Inc.')).toBeInTheDocument();
-    expect(screen.getByText('Active')).toBeInTheDocument();
-  });
-});
 ```
 
 ---
@@ -252,43 +180,11 @@ npm run lint:fix   # Fix ESLint issues
 npm run format     # Format code with Prettier
 ```
 
-### Code Quality
-- **ESLint**: Code linting with React and TypeScript rules
-- **Prettier**: Code formatting
-- **TypeScript**: Static type checking
-- **Husky**: Git hooks for pre-commit checks
 
-### Performance Monitoring
-```typescript
-// Built-in performance monitoring
-window.addEventListener('load', function() {
-  if ('performance' in window) {
-    const perfData = window.performance.timing;
-    const loadTime = perfData.loadEventEnd - perfData.navigationStart;
-    console.log('Page load time:', loadTime + 'ms');
-  }
-});
-```
 
 ---
 
-## 📊 Performance Metrics
 
-### Bundle Analysis
-- **Main Bundle**: 107.17 kB (gzipped)
-- **CSS Bundle**: 4.98 kB (gzipped)
-- **Total Size**: ~112 kB (optimized)
-
-### Core Web Vitals
-- **LCP**: < 2.5s (Largest Contentful Paint)
-- **FID**: < 100ms (First Input Delay)
-- **CLS**: < 0.1 (Cumulative Layout Shift)
-
-### Optimization Techniques
-- **Code Splitting**: Route-based lazy loading
-- **Tree Shaking**: Unused code elimination
-- **Image Optimization**: WebP format with fallbacks
-- **Caching**: Client-side and CDN caching
 
 ---
 
@@ -328,55 +224,11 @@ export const CACHE_CONFIG = {
 
 ---
 
-## 🤝 Contributing
 
-### Development Setup
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Make your changes
-4. Add tests for new functionality
-5. Run the test suite: `npm test`
-6. Commit your changes: `git commit -m 'feat: add amazing feature'`
-7. Push to the branch: `git push origin feature/amazing-feature`
-8. Open a Pull Request
-
-### Code Style
-- Follow TypeScript best practices
-- Use functional components with hooks
-- Write comprehensive tests
-- Follow the existing code structure
-- Use meaningful commit messages
 
 ---
 
-## 📚 API Reference
 
-### Polygon.io Integration
-```typescript
-// Fetch stocks with pagination
-const response = await stockService.getStocks({
-  market: 'stocks',
-  exchange: 'XNAS',
-  active: true,
-  limit: 20,
-  cursor: nextCursor,
-});
-
-// Search stocks
-const results = await stockService.searchStocks('AAPL', 20);
-```
-
-### Custom Hooks
-```typescript
-// Infinite scroll stocks
-const { stocks, isLoading, hasMore, loadMore } = useInfiniteStocks();
-
-// Debounced search
-const { data, isLoading, error } = useStockSearch(query);
-
-// Infinite scroll detection
-useInfiniteScroll({ hasMore, isLoading, onLoadMore });
-```
 
 ---
 
@@ -416,22 +268,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
 
-- **Polygon.io** for providing the stock market API
-- **React Team** for the amazing framework
-- **Tailwind CSS** for the utility-first CSS framework
-- **Framer Motion** for smooth animations
-- **Netlify** for seamless deployment
 
 ---
 
-## 📞 Support
 
-- **Documentation**: [Project Wiki](https://github.com/yourusername/sahm-nasdaq-explorer/wiki)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/sahm-nasdaq-explorer/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/sahm-nasdaq-explorer/discussions)
-- **Email**: [Contact Developer](mailto:your-email@example.com)
 
 ---
 
