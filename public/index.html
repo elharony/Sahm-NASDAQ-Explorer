@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0ea5e9" />
+    <meta name="description" content="Sahm - Your Gateway to NASDAQ. Explore and discover stocks with a beautiful, modern interface." />
+    <meta name="keywords" content="stocks, nasdaq, trading, finance, market, sahm, egypt" />
+    <meta name="author" content="Yahya Elharony" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="%PUBLIC_URL%" />
+    <meta property="og:title" content="Sahm - Your Gateway to NASDAQ" />
+    <meta property="og:description" content="Explore and discover stocks with a beautiful, modern interface." />
+    <meta property="og:image" content="%PUBLIC_URL%/sahm-preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="%PUBLIC_URL%" />
+    <meta property="twitter:title" content="Sahm - Your Gateway to NASDAQ" />
+    <meta property="twitter:description" content="Explore and discover stocks with a beautiful, modern interface." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/sahm-preview.png" />
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preconnect to external domains for better performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.polygon.io">
+    
+    <title>Sahm - Your Gateway to NASDAQ</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    
+    <!-- Performance monitoring -->
+    <script>
+      // Simple performance monitoring
+      window.addEventListener('load', function() {
+        if ('performance' in window) {
+          const perfData = window.performance.timing;
+          const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+          console.log('Page load time:', loadTime + 'ms');
+        }
+      });
+    </script>
+  </body>
+</html> 
