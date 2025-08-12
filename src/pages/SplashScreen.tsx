@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { APP_CONFIG, ROUTES } from '../config/constants';
+import { DarkModeToggle } from '../components/DarkModeToggle';
 
 export const SplashScreen: React.FC = () => {
   const navigate = useNavigate();
@@ -90,6 +91,11 @@ export const SplashScreen: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex flex-col items-center justify-center px-4 relative">
+      {/* Dark Mode Toggle - Top Right */}
+      <div className="absolute top-4 right-4 z-10">
+        <DarkModeToggle />
+      </div>
+      
       {/* Main Content - Centered */}
       <div className="text-center flex-1 flex flex-col items-center justify-center">
         {/* NASDAQ Logo */}

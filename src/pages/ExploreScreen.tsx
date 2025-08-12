@@ -4,6 +4,7 @@ import { SearchInput } from '../components/SearchInput';
 import { StockCard } from '../components/StockCard';
 import { LoadingSpinner } from '../components/LoadingSpinner';
 import { Toast } from '../components/Toast';
+import { DarkModeToggle } from '../components/DarkModeToggle';
 import { useInfiniteStocks, useStockSearch } from '../hooks/useInfiniteStocks';
 import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
 import { useDebounce } from '../hooks/useDebounce';
@@ -85,6 +86,7 @@ export const ExploreScreen: React.FC = () => {
                 {APP_CONFIG.TAGLINE}
               </span>
             </div>
+            <DarkModeToggle />
           </div>
         </div>
       </div>
