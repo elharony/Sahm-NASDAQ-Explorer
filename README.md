@@ -14,7 +14,9 @@
 </div>
 
 ## Demo
-![Image](https://github.com/user-attachments/assets/312d4c7f-9e9c-4a87-bdd8-bb38640570a9)
+🔗 [Live Demo](https://sahm-nasdaq-explorer.netlify.app/)
+
+![Image](https://github.com/user-attachments/assets/a6026ac2-899c-471e-87d5-504caed6d5a3)
 
 ---
 
